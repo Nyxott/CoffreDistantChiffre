@@ -1,0 +1,28 @@
+Port <lePortQueVousSouhaitezAutreQue22>
+Protocol 2
+
+MaxSessions 2
+MaxAuthTries 3
+LoginGraceTime 30
+ClientAliveCountMax 0
+ClientAliveInterval 180
+
+UsePAM yes
+AllowUsers <leNomDeLUtilisateurPouvantSeConnecterEnSSH>
+PermitRootLogin no
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+AuthorizedKeysFile /etc/ssh/keys/%u/authorized_keys
+
+X11Forwarding no
+AllowTcpForwarding no
+AllowAgentForwarding no
+
+Banner /etc/issue.net
+
+UseDNS yes
+TCPKeepAlive no
+LogLevel VERBOSE
+Compression delayed
+AcceptEnv LANG LC_*
+Subsystem sftp /usr/lib/openssh/sftp-server
